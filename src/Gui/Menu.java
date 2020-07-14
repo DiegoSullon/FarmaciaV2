@@ -73,6 +73,7 @@ public class Menu extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1015, 738));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_menu_squared_50px.png"))); // NOI18N

@@ -5,21 +5,22 @@
  */
 package Panels;
 
-
 import static Gui.Menu.pnlPrincipal;
 import Farmacia.Empleado;
 import Farmacia.Farmacia;
 import Farmacia.Medicamento;
 import Farmacia.RegistroClientes;
+import Gui.Menu;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+
 /**
  *
  * @author Kevin
  */
 public class TomarPedido extends javax.swing.JPanel {
-    
-        //Lista de medicamentos
+
+    //Lista de medicamentos
     DefaultListModel jlist = new DefaultListModel();
     //Lista de compras
     DefaultListModel listaVenta = new DefaultListModel();
@@ -35,7 +36,8 @@ public class TomarPedido extends javax.swing.JPanel {
     Farmacia farmacia;
     Empleado actual;
     RegistroClientes registroClientes;
-    
+    Menu menu;
+
     public TomarPedido(Empleado actual, Farmacia farmacia, RegistroClientes registroClientes) {
         this.registroClientes = registroClientes;
         this.actual = actual;
@@ -49,6 +51,7 @@ public class TomarPedido extends javax.swing.JPanel {
         validador.add("00000000");
         obtenerLista(this.farmacia.getInventario().getMedicamentos());
     }
+
     public TomarPedido() {
         initComponents();
         jlist = new DefaultListModel();
@@ -56,7 +59,7 @@ public class TomarPedido extends javax.swing.JPanel {
         listaVenta = new DefaultListModel();
         venta.setModel(listaVenta);
     }
-    
+
     private void obtenerLista(ArrayList<Medicamento> medicamentos) {
         for (int i = 0; i < medicamentos.size(); i++) {
             jlist.addElement(medicamentos.get(i).getCodigo() + "    " + medicamentos.get(i).getNombre() + "    " + medicamentos.get(i).getCantidad() + "unid.    S/." + medicamentos.get(i).getPrecio());
@@ -339,7 +342,7 @@ public class TomarPedido extends javax.swing.JPanel {
 
     private void btnDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnDeleteMouseClicked
         // TODO add your handling code here:
-            if (c != 0) {
+        if (c != 0) {
             actual.getPedido().eliminarProducto();
             listaVenta.clear();
             obtenerVenta(actual.getPedido().getDetalles());
@@ -350,9 +353,9 @@ public class TomarPedido extends javax.swing.JPanel {
 
     private void btnAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarMouseClicked
         // TODO add your handling code here:
-                if (lista.getSelectedValue() != null) {
+        if (lista.getSelectedValue() != null) {
             if (!pedido) {
-                
+
                 if (validador.get(0).equals("persona")) {
                     actual.generarPedidoP(validador.get(1), lista.getSelectedValue().substring(0, 3), registroClientes);
                 } else if (validador.get(0).equals("empresa")) {
@@ -374,15 +377,33 @@ public class TomarPedido extends javax.swing.JPanel {
 
     private void botonNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNuevoClienteActionPerformed
         // TODO add your handling code here:
-        new CambiaPanel(pnlPrincipal,new Panels.AgregarCliente(registroClientes,validador));
+
+        if (!pedido) {
+            AgregarClienteTP agregarClienteTP = new AgregarClienteTP(registroClientes, validador);
+            agregarClienteTP.setVisible(true);
+//            System.out.println(validador.get(0));
+        } else {
+            AdvertenciaPedido advertencia = new AdvertenciaPedido(menu, true);
+            advertencia.setVisible(true);
+            System.out.println("Pedido en curso");
+        }
     }//GEN-LAST:event_botonNuevoClienteActionPerformed
 
     private void botonClienteRegistradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonClienteRegistradoActionPerformed
         // TODO add your handling code here:
-        registroClientes.actualizarListaEmpresas();
-        registroClientes.actualizarListaPersonas();
-        
-        new CambiaPanel(pnlPrincipal,new Panels.ClientesRegistrados(registroClientes, validador));
+
+        if (!pedido) {
+            registroClientes.actualizarListaEmpresas();
+            registroClientes.actualizarListaPersonas();
+            ClientesRegistradosTP clientesRegistrados = new ClientesRegistradosTP(registroClientes, validador);
+            clientesRegistrados.setVisible(true);
+//            System.out.println(validador.get(0));
+        } else {
+            AdvertenciaPedido advertencia = new AdvertenciaPedido(menu, true);
+            advertencia.setVisible(true);
+            System.out.println("Pedido en curso");
+        }
+
     }//GEN-LAST:event_botonClienteRegistradoActionPerformed
 
     private void botonBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBoletaActionPerformed
@@ -399,7 +420,7 @@ public class TomarPedido extends javax.swing.JPanel {
 
     private void botonFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFacturaActionPerformed
         // TODO add your handling code here:
-         if (listaVenta.getSize() > 0) {
+        if (listaVenta.getSize() > 0) {
             actual.getPedido().realizarVenta(actual.getPedido(), 0, true);
             actual.getPedido().getVenta().generarComprobante(farmacia, true);
             actual.registrarVenta(actual.getPedido().getVenta());
@@ -428,7 +449,7 @@ public class TomarPedido extends javax.swing.JPanel {
             obtenerLista(this.farmacia.getInventario().getMedicamentos());
         }
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_cancelButtonActionPerformed
 
 

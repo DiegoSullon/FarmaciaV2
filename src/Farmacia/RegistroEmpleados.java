@@ -101,6 +101,15 @@ public class RegistroEmpleados {
                     update.executeUpdate();
                     break;
                 case "cargo":
+                    if(cambio.equalsIgnoreCase("gerente")){
+                        cambio="Gerente";
+                    }else if(cambio.equalsIgnoreCase("asistente")){
+                        cambio="Asistente";
+                    }else if(cambio.equalsIgnoreCase("cajero")){
+                        cambio="Cajero";
+                    }else {
+                        break;
+                    }
                     update = conexion.prepareStatement("UPDATE `empleados` SET `cargo` = ? WHERE `empleados`.`dni` = ?");
                     update.setString(1, cambio);
                     update.setString(2, dni);
