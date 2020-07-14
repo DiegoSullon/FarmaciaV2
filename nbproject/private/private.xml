@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Diego%20Sullon/Desktop/FarmaciaV1.1/src/Farmacia/Inventario.java</file>
-            <file>file:/C:/Users/Diego%20Sullon/Desktop/FarmaciaV1.1/src/Farmacia/RegistroEmpleados.java</file>
-            <file>file:/C:/Users/Diego%20Sullon/Desktop/FarmaciaV1.1/src/Farmacia/RegistroClientes.java</file>
-            <file>file:/C:/Users/Diego%20Sullon/Desktop/FarmaciaV1.1/src/Gui/Login.java</file>
-            <file>file:/C:/Users/Diego%20Sullon/Desktop/FarmaciaV1.1/src/Farmacia/Farmacia.java</file>
-            <file>file:/C:/Users/Diego%20Sullon/Desktop/FarmaciaV1.1/src/Panels/TomarPedido.java</file>
-            <file>file:/C:/Users/Diego%20Sullon/Desktop/FarmaciaV1.1/src/Farmacia/RegistroVentas.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Farmacia/Farmacia.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/MenuMedicamento.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Farmacia/Inventario.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Gui/Login.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/ListaMedicamentos.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/CuadrarCaja.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/TomarPedido.java</file>
         </group>
     </open-files>
 </project-private>

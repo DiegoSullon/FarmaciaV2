@@ -8,43 +8,44 @@ package Panels;
 import static Gui.Menu.pnlPrincipal;
 import Farmacia.Farmacia;
 import Farmacia.Empleado;
-
+import Gui.Menu;
+import java.awt.event.KeyEvent;
 
 /**
  *
  * @author Kevin
  */
 public class ListaMedicamentos extends javax.swing.JPanel {
-    
+
     private Farmacia farmacia;
     Empleado actual;
-    
+
     public ListaMedicamentos() {
         initComponents();
     }
-    
-        public ListaMedicamentos(Farmacia farmacia) {
+
+    public ListaMedicamentos(Farmacia farmacia) {
         this.farmacia = farmacia;
         initComponents();
-        
-        
-        int tam = farmacia.getInventario().getMedicamentos().size() ;
-        String matriz[][]=new String [tam][5];
+
+        int tam = farmacia.getInventario().getMedicamentos().size();
+        String matriz[][] = new String[tam][5];
         for (int i = 0; i < tam; i++) {
-            matriz[i][0]=farmacia.getInventario().getMedicamentos().get(i).getCodigo();
-            matriz[i][1]=farmacia.getInventario().getMedicamentos().get(i).getNombre();
-            matriz[i][2]=farmacia.getInventario().getMedicamentos().get(i).getMarca();
-            matriz[i][3]=String.valueOf(farmacia.getInventario().getMedicamentos().get(i).getCantidad());
-            matriz[i][4]=String.valueOf(farmacia.getInventario().getMedicamentos().get(i).getPrecio());
-            
+            matriz[i][0] = farmacia.getInventario().getMedicamentos().get(i).getCodigo();
+            matriz[i][1] = farmacia.getInventario().getMedicamentos().get(i).getNombre();
+            matriz[i][2] = farmacia.getInventario().getMedicamentos().get(i).getMarca();
+            matriz[i][3] = String.valueOf(farmacia.getInventario().getMedicamentos().get(i).getCantidad());
+            matriz[i][4] = String.valueOf(farmacia.getInventario().getMedicamentos().get(i).getPrecio());
+
         }
-        
-         tabla.setModel(new javax.swing.table.DefaultTableModel(
-            matriz,
-            new String [] {
-                "Código", "Nombre", "Marca", "Cantidad", "Precio"
-            }
-        ) );
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+                matriz,
+                new String[]{
+                    "Código", "Nombre", "Marca", "Cantidad", "Precio"
+                }
+        ));
+
     }
 
     /**
@@ -56,26 +57,27 @@ public class ListaMedicamentos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnIngresarE = new javax.swing.JLabel();
+        vencidosButton = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         inCodigo = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        btnIngresarE1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(27, 37, 69));
         setMinimumSize(new java.awt.Dimension(700, 700));
 
-        btnIngresarE.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
-        btnIngresarE.setForeground(new java.awt.Color(255, 255, 255));
-        btnIngresarE.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnIngresarE.setText("ACEPTAR");
-        btnIngresarE.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        btnIngresarE.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnIngresarE.addMouseListener(new java.awt.event.MouseAdapter() {
+        vencidosButton.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        vencidosButton.setForeground(new java.awt.Color(255, 255, 255));
+        vencidosButton.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        vencidosButton.setText("Por vencer");
+        vencidosButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        vencidosButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        vencidosButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnIngresarEMouseClicked(evt);
+                vencidosButtonMouseClicked(evt);
             }
         });
 
@@ -104,7 +106,7 @@ public class ListaMedicamentos extends javax.swing.JPanel {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Float.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                true, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -119,6 +121,11 @@ public class ListaMedicamentos extends javax.swing.JPanel {
         tabla.setSelectionBackground(new java.awt.Color(255, 51, 51));
         tabla.setShowVerticalLines(false);
         tabla.getTableHeader().setReorderingAllowed(false);
+        tabla.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                tablaPropertyChange(evt);
+            }
+        });
         jScrollPane2.setViewportView(tabla);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/mostrar_medicamento_logo.png"))); // NOI18N
@@ -126,6 +133,18 @@ public class ListaMedicamentos extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Arial Narrow", 1, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("MEDICAMENTOS");
+
+        btnIngresarE1.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
+        btnIngresarE1.setForeground(new java.awt.Color(255, 255, 255));
+        btnIngresarE1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnIngresarE1.setText("ACEPTAR");
+        btnIngresarE1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        btnIngresarE1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnIngresarE1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnIngresarE1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -147,11 +166,17 @@ public class ListaMedicamentos extends javax.swing.JPanel {
                                         .addGap(156, 156, 156)
                                         .addComponent(jLabel2)))
                                 .addGap(38, 38, 38))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnIngresarE, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(195, 195, 195)))))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING))))
                 .addGap(0, 57, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(vencidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(268, Short.MAX_VALUE)
+                    .addComponent(btnIngresarE1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(242, 242, 242)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,25 +194,67 @@ public class ListaMedicamentos extends javax.swing.JPanel {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(inCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnIngresarE, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addComponent(vencidosButton)
+                .addGap(38, 38, 38))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(647, Short.MAX_VALUE)
+                    .addComponent(btnIngresarE1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(31, 31, 31)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIngresarEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarEMouseClicked
+    private void vencidosButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vencidosButtonMouseClicked
+        farmacia.getInventario().medicamentosVencidos();
+        int tam = farmacia.getInventario().getMedicamentosVencidos().size();
+        String matriz[][] = new String[tam][5];
+        for (int i = 0; i < tam; i++) {
+            matriz[i][0] = farmacia.getInventario().getMedicamentosVencidos().get(i).getCodigo();
+            matriz[i][1] = farmacia.getInventario().getMedicamentosVencidos().get(i).getNombre();
+            matriz[i][2] = farmacia.getInventario().getMedicamentosVencidos().get(i).getMarca();
+            matriz[i][3] = String.valueOf(farmacia.getInventario().getMedicamentosVencidos().get(i).getCantidad());
+            matriz[i][4] = String.valueOf(farmacia.getInventario().getMedicamentosVencidos().get(i).getPrecio());
+
+        }
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+                matriz,
+                new String[]{
+                    "Código", "Nombre", "Marca", "Cantidad", "Precio"
+                }
+        ));
+
+    }//GEN-LAST:event_vencidosButtonMouseClicked
+
+    private void tablaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_tablaPropertyChange
         // TODO add your handling code here:
-        new CambiaPanel(pnlPrincipal,new Panels.MenuMedicamento(actual,farmacia));
-    }//GEN-LAST:event_btnIngresarEMouseClicked
+
+        try {
+            if (tabla.getSelectedRow() >= 0 && tabla.getSelectedColumn() > 0 && tabla.getSelectedColumn() != 3) {
+
+                farmacia.getInventario().modificarMedicamento(tabla.getValueAt(tabla.getSelectedRow(), 0).toString(), tabla.getColumnName(tabla.getSelectedColumn()).toLowerCase(), tabla.getValueAt(tabla.getSelectedRow(), tabla.getSelectedColumn()).toString().toLowerCase());
+            }
+        } catch (Exception e) {
+            System.out.println("xdxd");
+        }
+
+
+    }//GEN-LAST:event_tablaPropertyChange
+
+    private void btnIngresarE1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarE1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIngresarE1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnIngresarE;
+    private javax.swing.JLabel btnIngresarE1;
     private javax.swing.JTextField inCodigo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tabla;
+    private javax.swing.JLabel vencidosButton;
     // End of variables declaration//GEN-END:variables
 }

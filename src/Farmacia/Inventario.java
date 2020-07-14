@@ -8,6 +8,7 @@ package Farmacia;
 import java.util.ArrayList;
 import java.util.Date;
 import java.sql.*;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -19,6 +20,7 @@ public class Inventario {
 
     int cod = 1;
     private ArrayList<Medicamento> medicamentos = new ArrayList<Medicamento>();
+    private ArrayList<Medicamento> medicamentosVencidos = new ArrayList<Medicamento>();
     private ArrayList<Medicamento> enPromocion = new ArrayList<Medicamento>();
 
     public Inventario() {
@@ -49,7 +51,7 @@ public class Inventario {
         boolean t = true;
         try {
             //Se crea la conexión con la base de datos
-            Connection miConexion=Farmacia.getConexion();
+            Connection miConexion = Farmacia.getConexion();
             //modelo de sentencia
             PreparedStatement miSentencia = miConexion.prepareStatement("SELECT * FROM medicamentos "
                     + "WHERE cod_medicamento=?");
@@ -114,7 +116,7 @@ public class Inventario {
             //almacena resultado
             ResultSet rs = miSentencia.executeQuery();
             if (rs.next()) {
-                t=true;
+                t = true;
                 if (rs.getInt("cantidad") > 1) {
                     PreparedStatement update = conexion.prepareStatement("UPDATE `medicamentos` SET `cantidad` = ? WHERE `medicamentos`.`cod_medicamento` = ?");
                     update.setInt(1, rs.getInt("cantidad") - 1);
@@ -132,6 +134,38 @@ public class Inventario {
             actualizarLista();
         } catch (SQLException ex) {
             System.out.println("Fallo en conexión");
+
+        }
+    }
+
+    public void modificarMedicamento(String codigo, String column, String cambio) {
+        try {
+            Connection conexion = Farmacia.getConexion();
+            PreparedStatement update;
+            switch (column) {
+                case "nombre":
+                    update = conexion.prepareStatement("UPDATE `medicamentos` SET `nombre` = ? WHERE `medicamentos`.`cod_medicamento` = ?");
+                    update.setString(1, cambio);
+                    update.setString(2, codigo);
+                    update.executeUpdate();
+                    break;
+                case "marca":
+                    update = conexion.prepareStatement("UPDATE `medicamentos` SET `marca` = ? WHERE `medicamentos`.`cod_medicamento` = ?");
+                    update.setString(1, cambio);
+                    update.setString(2, codigo);
+                    update.executeUpdate();
+                    break;
+                case "precio":
+                    update = conexion.prepareStatement("UPDATE `medicamentos` SET `precio` = ? WHERE `medicamentos`.`cod_medicamento` = ?");
+                    update.setFloat(1, Float.parseFloat(cambio));
+                    update.setString(2, codigo);
+                    update.executeUpdate();
+                    break;
+            }
+
+            actualizarLista();
+        } catch (Exception e) {
+            System.out.println("Fallo modificarMedicamento");
         }
     }
 
@@ -141,15 +175,32 @@ public class Inventario {
             Connection conexion = Farmacia.getConexion();
             PreparedStatement sentencia = conexion.prepareStatement("SELECT * FROM medicamentos");
             ResultSet rs = sentencia.executeQuery();
-            
+
             while (rs.next()) {
-                Date fecha= new Date(rs.getDate("fecha_vencimiento").getTime());
+                Date fecha = new Date(rs.getDate("fecha_vencimiento").getTime());
                 Medicamento e = new Medicamento(rs.getString("nombre"), rs.getString("cod_medicamento"), rs.getFloat("precio"), rs.getString("marca"), rs.getInt("cantidad"), fecha);
                 medicamentos.add(e);
             }
             rs.close();
         } catch (SQLException ex) {
             System.out.println("Fallo en conexión333");
+        }
+    }
+
+    public void medicamentosVencidos() {
+        for (int i = 0; i < medicamentos.size(); i++) {
+            Calendar fechaVencimientoCalendar = Calendar.getInstance();
+            Calendar fechaActual = Calendar.getInstance();
+            Date fechaVencimientoDate = medicamentos.get(i).getfVencimiento();
+            fechaVencimientoCalendar.setTime(fechaVencimientoDate);
+
+            long milisegundos = fechaVencimientoCalendar.getTimeInMillis() - fechaActual.getTimeInMillis();
+            long dias = milisegundos / 1000 / 60 / 60 / 24;
+
+            if (dias <= 15) {
+                Medicamento e = new Medicamento(medicamentos.get(i).getNombre(), medicamentos.get(i).getCodigo(), medicamentos.get(i).getPrecio(), medicamentos.get(i).getMarca(), medicamentos.get(i).getCantidad(), medicamentos.get(i).getfVencimiento());
+                medicamentosVencidos.add(e);
+            }
         }
     }
 
@@ -193,6 +244,10 @@ public class Inventario {
                 break;
         }
         return codC;
+    }
+
+    public ArrayList<Medicamento> getMedicamentosVencidos() {
+        return medicamentosVencidos;
     }
 
     public ArrayList<Medicamento> getMedicamentos() {

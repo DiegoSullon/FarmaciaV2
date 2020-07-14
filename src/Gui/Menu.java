@@ -35,6 +35,13 @@ public class Menu extends javax.swing.JFrame {
         this.registroClientes=registroClientes;
         initComponents();
         setLocationRelativeTo(null);
+        if(actual.getCargo().equalsIgnoreCase("Cajero")){
+            uno.setVisible(false);
+            dos.setVisible(false);
+        }
+        if(actual.getCargo().equalsIgnoreCase("Asistente")){
+            uno.setVisible(false);
+        }
     }
     
     public Menu() {
@@ -55,13 +62,13 @@ public class Menu extends javax.swing.JFrame {
         btnMenu = new javax.swing.JButton();
         pnlPrincipal = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
-        dos = new javax.swing.JButton();
-        cinco = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
         uno = new javax.swing.JButton();
         tres = new javax.swing.JButton();
-        seis = new javax.swing.JButton();
+        dos = new javax.swing.JButton();
         cuatro = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        cinco = new javax.swing.JButton();
+        seis = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -86,42 +93,8 @@ public class Menu extends javax.swing.JFrame {
 
         panelMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        dos.setBackground(new java.awt.Color(102, 153, 255, 100));
-        dos.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        dos.setForeground(new java.awt.Color(255, 255, 255));
-        dos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_worker_26px.png"))); // NOI18N
-        dos.setText("Nuevo Empleado");
-        dos.setBorder(null);
-        dos.setContentAreaFilled(false);
-        dos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        dos.setFocusPainted(false);
-        dos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dos.setRequestFocusEnabled(false);
-        dos.setRolloverEnabled(false);
-        dos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dosActionPerformed(evt);
-            }
-        });
-        panelMenu.add(dos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 290, 40));
-
-        cinco.setBackground(new java.awt.Color(102, 153, 255, 100));
-        cinco.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        cinco.setForeground(new java.awt.Color(255, 255, 255));
-        cinco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_coins_32px.png"))); // NOI18N
-        cinco.setText("Cuadrar Caja");
-        cinco.setBorder(null);
-        cinco.setContentAreaFilled(false);
-        cinco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cinco.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        cinco.setRequestFocusEnabled(false);
-        cinco.setRolloverEnabled(false);
-        cinco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cincoActionPerformed(evt);
-            }
-        });
-        panelMenu.add(cinco, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 290, 40));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0,100));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         uno.setBackground(new java.awt.Color(0, 0, 0, 150));
         uno.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -139,7 +112,7 @@ public class Menu extends javax.swing.JFrame {
                 unoActionPerformed(evt);
             }
         });
-        panelMenu.add(uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 290, 40));
+        jPanel1.add(uno, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 290, 40));
 
         tres.setBackground(new java.awt.Color(102, 153, 255, 100));
         tres.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -158,25 +131,26 @@ public class Menu extends javax.swing.JFrame {
                 tresActionPerformed(evt);
             }
         });
-        panelMenu.add(tres, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 290, 40));
+        jPanel1.add(tres, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 290, 40));
 
-        seis.setBackground(new java.awt.Color(102, 153, 255,100));
-        seis.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        seis.setForeground(new java.awt.Color(255, 255, 255));
-        seis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_client_management_30px.png"))); // NOI18N
-        seis.setText("Agregar Cliente");
-        seis.setBorder(null);
-        seis.setContentAreaFilled(false);
-        seis.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        seis.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        seis.setRequestFocusEnabled(false);
-        seis.setRolloverEnabled(false);
-        seis.addActionListener(new java.awt.event.ActionListener() {
+        dos.setBackground(new java.awt.Color(102, 153, 255, 100));
+        dos.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        dos.setForeground(new java.awt.Color(255, 255, 255));
+        dos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_worker_26px.png"))); // NOI18N
+        dos.setText("Nuevo Empleado");
+        dos.setBorder(null);
+        dos.setContentAreaFilled(false);
+        dos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dos.setFocusPainted(false);
+        dos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dos.setRequestFocusEnabled(false);
+        dos.setRolloverEnabled(false);
+        dos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                seisActionPerformed(evt);
+                dosActionPerformed(evt);
             }
         });
-        panelMenu.add(seis, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 290, 40));
+        jPanel1.add(dos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 290, 40));
 
         cuatro.setBackground(new java.awt.Color(102, 153, 255,100));
         cuatro.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -194,9 +168,44 @@ public class Menu extends javax.swing.JFrame {
                 cuatroActionPerformed(evt);
             }
         });
-        panelMenu.add(cuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 290, 40));
+        jPanel1.add(cuatro, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 290, 40));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0,100));
+        cinco.setBackground(new java.awt.Color(102, 153, 255, 100));
+        cinco.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        cinco.setForeground(new java.awt.Color(255, 255, 255));
+        cinco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_coins_32px.png"))); // NOI18N
+        cinco.setText("Cuadrar Caja");
+        cinco.setBorder(null);
+        cinco.setContentAreaFilled(false);
+        cinco.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cinco.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        cinco.setRequestFocusEnabled(false);
+        cinco.setRolloverEnabled(false);
+        cinco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cincoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(cinco, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 290, 40));
+
+        seis.setBackground(new java.awt.Color(102, 153, 255,100));
+        seis.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        seis.setForeground(new java.awt.Color(255, 255, 255));
+        seis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_client_management_30px.png"))); // NOI18N
+        seis.setText("Agregar Cliente");
+        seis.setBorder(null);
+        seis.setContentAreaFilled(false);
+        seis.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        seis.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        seis.setRequestFocusEnabled(false);
+        seis.setRolloverEnabled(false);
+        seis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seisActionPerformed(evt);
+            }
+        });
+        jPanel1.add(seis, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 290, 40));
+
         panelMenu.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, 700));
 
         getContentPane().add(panelMenu);
@@ -217,8 +226,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void dosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dosActionPerformed
         // TODO add your handling code here:
-        uno.setFocusable(false);
-        new CambiaPanel(pnlPrincipal,new Panels.RegistrarEmpleado(actual,farmacia));
+        new CambiaPanel(pnlPrincipal,new Panels.MenuEmpleado(actual, farmacia));
     }//GEN-LAST:event_dosActionPerformed
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed

@@ -17,15 +17,19 @@ import javax.swing.JFrame;
 public class CuadrarCaja extends javax.swing.JPanel {
 
      DefaultListModel jlista = new DefaultListModel();
+     DefaultListModel jlistaTotal = new DefaultListModel();
     Farmacia farmacia;
+    private float total;
 
     public CuadrarCaja(Farmacia farmacia) {
         this.farmacia = farmacia;
         initComponents();
         jlista = new DefaultListModel();
         listaVentas.setModel(jlista);
+        jlistaTotal = new DefaultListModel();
+        totalVentas.setModel(jlistaTotal);
         obtenerLista(farmacia.getR_ventas().getVentas());
-        
+        actualizarTotal();
     }
     /**
      * Creates new form NewJPanel
@@ -37,10 +41,14 @@ public class CuadrarCaja extends javax.swing.JPanel {
     private void obtenerLista(ArrayList<Venta> ventas) {
         for (int i = 0; i < ventas.size(); i++) {
             jlista.addElement(ventas.get(i).getNombreC()+" Total: "+ventas.get(i).getTotal()+" Doc: "+ventas.get(i).getDoc());
+            total=total+ventas.get(i).getTotal();
         }
         if (ventas.isEmpty()) {
             jlista.addElement("No hay ventas registradas.");
         }
+    }
+    private void actualizarTotal(){
+        jlistaTotal.addElement("Total: "+total);
     }
 
     /**
@@ -57,6 +65,8 @@ public class CuadrarCaja extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         listaVentas = new javax.swing.JList<>();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        totalVentas = new javax.swing.JList<>();
 
         jPanel1.setBackground(new java.awt.Color(27, 37, 69));
 
@@ -67,6 +77,8 @@ public class CuadrarCaja extends javax.swing.JPanel {
         jScrollPane1.setViewportView(listaVentas);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/pngwing.com.png"))); // NOI18N
+
+        jScrollPane2.setViewportView(totalVentas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -82,7 +94,9 @@ public class CuadrarCaja extends javax.swing.JPanel {
                         .addContainerGap(16, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 546, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2))
                         .addGap(66, 66, 66))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -97,7 +111,9 @@ public class CuadrarCaja extends javax.swing.JPanel {
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(98, 98, 98))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -118,6 +134,8 @@ public class CuadrarCaja extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JList<String> listaVentas;
+    private javax.swing.JList<String> totalVentas;
     // End of variables declaration//GEN-END:variables
 }

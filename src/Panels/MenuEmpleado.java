@@ -15,18 +15,18 @@ import javax.swing.JFrame;
  *
  * @author Kevin
  */
-public class MenuMedicamento extends javax.swing.JPanel {
+public class MenuEmpleado extends javax.swing.JPanel {
     
     Empleado actual ;
     Farmacia farmacia;
 
-    public MenuMedicamento(Empleado actual, Farmacia farmacia) {
+    public MenuEmpleado(Empleado actual, Farmacia farmacia) {
         this.actual = actual;
         this.farmacia = farmacia;
         initComponents();
     }
 
-    public MenuMedicamento() {
+    public MenuEmpleado() {
         initComponents();
     }
 
@@ -55,7 +55,7 @@ public class MenuMedicamento extends javax.swing.JPanel {
 
         botonP.setBackground(new java.awt.Color(27, 37, 69));
         botonP.setForeground(new java.awt.Color(27, 37, 69));
-        botonP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/pills_100px.png"))); // NOI18N
+        botonP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/persona100.png"))); // NOI18N
         botonP.setBorder(null);
         botonP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,26 +76,26 @@ public class MenuMedicamento extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Arial Narrow", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("AGREGAR MEDICAMENTO");
+        jLabel1.setText("AGREGAR EMPLEADO");
 
         jLabel2.setFont(new java.awt.Font("Arial Narrow", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("MOSTRAR MEDICAMENTO");
+        jLabel2.setText("MOSTRAR EMPLEADOS");
 
         jPanel2.setBackground(new java.awt.Color(51, 204, 255));
 
         jLabel3.setFont(new java.awt.Font("Arial Narrow", 0, 36)); // NOI18N
-        jLabel3.setText("REGISTRAR MEDICAMENTO");
+        jLabel3.setText("REGISTRAR EMPLEADO");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(77, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addContainerGap(85, Short.MAX_VALUE))
+                .addGap(69, 69, 69))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,28 +110,28 @@ public class MenuMedicamento extends javax.swing.JPanel {
         panelxdLayout.setHorizontalGroup(
             panelxdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelxdLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(jLabel1)
-                .addGap(75, 75, 75)
-                .addComponent(jLabel2)
-                .addContainerGap(55, Short.MAX_VALUE))
-            .addGroup(panelxdLayout.createSequentialGroup()
                 .addGap(95, 95, 95)
                 .addComponent(botonP, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(83, 83, 83))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelxdLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(panelxdLayout.createSequentialGroup()
+                .addContainerGap(84, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(113, 113, 113)
+                .addComponent(jLabel2)
                 .addGap(67, 67, 67))
+            .addGroup(panelxdLayout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         panelxdLayout.setVerticalGroup(
             panelxdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelxdLayout.createSequentialGroup()
-                .addContainerGap(105, Short.MAX_VALUE)
+                .addContainerGap(104, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(36, 36, 36)
                 .addGroup(panelxdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -156,13 +156,14 @@ public class MenuMedicamento extends javax.swing.JPanel {
 
     private void botonPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPActionPerformed
         // TODO add your handling code here:
-        new CambiaPanel(pnlPrincipal,new Panels.AgregarMedicamento(actual,farmacia));
+        new CambiaPanel(pnlPrincipal,new Panels.RegistrarEmpleado(actual,farmacia));
     }//GEN-LAST:event_botonPActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        farmacia.getInventario().actualizarLista();
-        new CambiaPanel(pnlPrincipal,new Panels.ListaMedicamentos(farmacia));
+        farmacia.getR_empleados().actualizarLista(farmacia);
+        new CambiaPanel(pnlPrincipal,new Panels.ListaEmpleados(farmacia));
+       
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

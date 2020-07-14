@@ -17,8 +17,10 @@ public class Farmacia {
     private final String ruc = "20566345658";
 
     private static Connection conexion;
+    private static Connection conexion_local;
 
     Map<String, String> database = new HashMap<String, String>();
+    Map<String, String> database_local = new HashMap<String, String>();
     private RegistroVentas rVentas;
     private Inventario inventario;
     private RegistroEmpleados r_empleados;
@@ -30,6 +32,7 @@ public class Farmacia {
         this.telefono = telefono;
         this.codigo = codigo;
         actualizarConexion("bwfvy0vhvjg6ubvv52vs-mysql.services.clever-cloud.com", "bwfvy0vhvjg6ubvv52vs", "3306", "utosyldwfdhnnlqu", "UyLT9X6DQx1p16jahDke");
+        actualizarConexion_local("localhost", "farmacia", "3308", "root", "");
         this.rVentas = new RegistroVentas();
         this.inventario = new Inventario();
         this.r_empleados = new RegistroEmpleados(this);
@@ -47,6 +50,14 @@ public class Farmacia {
         database.put("password", passsword);
         this.conexion = conectarBBDD();
     }
+    public void actualizarConexion_local(String host, String name, String port, String user, String passsword) {
+        database_local.put("host", host);
+        database_local.put("name", name);
+        database_local.put("port", port);
+        database_local.put("user", user);
+        database_local.put("password", passsword);
+        this.conexion_local = conectarBBDD_local();
+    }
 
     public void cerrarConexion() {
         try {
@@ -56,6 +67,14 @@ public class Farmacia {
             Logger.getLogger("no se cerró la conexión");
         }
     }
+    public void cerrarConexion_local() {
+        try {
+            //cierre de conexión
+            conexion_local.close();
+        } catch (SQLException ex) {
+            Logger.getLogger("no se cerró la conexión local");
+        }
+    }
 
     private Connection conectarBBDD() {
         String c = "jdbc:mysql://" + database.get("host") + ":" + database.get("port") + "/" + database.get("name");
@@ -63,8 +82,17 @@ public class Farmacia {
             Connection miConexion = DriverManager.getConnection(c, database.get("user"), database.get("password"));
             return miConexion;
         } catch (SQLException ex) {
-//            Logger.getLogger(Farmacia.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Sin conexión");
+            return null;
+        }
+    }
+    private Connection conectarBBDD_local() {
+        String c = "jdbc:mysql://" + database_local.get("host") + ":" + database_local.get("port") + "/" + database_local.get("name");
+        try {
+            Connection miConexion = DriverManager.getConnection(c, database_local.get("user"), database_local.get("password"));
+            return miConexion;
+        } catch (SQLException ex) {
+            System.out.println("Sin conexión local");
             return null;
         }
     }
@@ -72,6 +100,11 @@ public class Farmacia {
     public static Connection getConexion() {
         return conexion;
     }
+
+    public static Connection getConexion_local() {
+        return conexion_local;
+    }
+    
 
     public RegistroVentas getR_ventas() {
         return rVentas;

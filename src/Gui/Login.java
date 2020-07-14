@@ -45,6 +45,7 @@ public class Login extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         btnlogin = new javax.swing.JLabel();
         dniLogin = new javax.swing.JTextField();
+        settingsButton = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         jTextField1.setText("jTextField1");
@@ -85,6 +86,15 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(dniLogin);
         dniLogin.setBounds(460, 235, 218, 30);
 
+        settingsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/engranaje (1).png"))); // NOI18N
+        settingsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingsButtonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(settingsButton);
+        settingsButton.setBounds(650, 20, 40, 32);
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/Web 1280 – 1.png"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 700, 440);
@@ -120,6 +130,10 @@ public class Login extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_dniLoginKeyTyped
+
+    private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
+//        configuraciones
+    }//GEN-LAST:event_settingsButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -162,5 +176,6 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField dniLogin;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel settingsButton;
     // End of variables declaration//GEN-END:variables
 }
