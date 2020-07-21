@@ -47,7 +47,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         setLocationRelativeTo(null);
-        new CambiaPanel(pnlPrincipal,new Panels.panelHome());
+
     }
 
     /**
@@ -76,7 +76,7 @@ public class Menu extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_menu_squared_50px.png"))); // NOI18N
+        btnMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/boton_hamburguesa.png"))); // NOI18N
         btnMenu.setBorder(null);
         btnMenu.setContentAreaFilled(false);
         btnMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -86,7 +86,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnMenu);
-        btnMenu.setBounds(0, 5, 50, 50);
+        btnMenu.setBounds(10, 10, 50, 50);
 
         pnlPrincipal.setBackground(new java.awt.Color(27, 37, 69));
         getContentPane().add(pnlPrincipal);
@@ -100,7 +100,7 @@ public class Menu extends javax.swing.JFrame {
         uno.setBackground(new java.awt.Color(0, 0, 0, 150));
         uno.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         uno.setForeground(new java.awt.Color(255, 255, 255));
-        uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_home_24px.png"))); // NOI18N
+        uno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/home_medium.png"))); // NOI18N
         uno.setText("Nueva Sede");
         uno.setBorder(null);
         uno.setContentAreaFilled(false);
@@ -118,7 +118,7 @@ public class Menu extends javax.swing.JFrame {
         tres.setBackground(new java.awt.Color(102, 153, 255, 100));
         tres.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         tres.setForeground(new java.awt.Color(255, 255, 255));
-        tres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_speaker_notes_24px.png"))); // NOI18N
+        tres.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/dialogo.png"))); // NOI18N
         tres.setText("Registrar Medicamento");
         tres.setBorder(null);
         tres.setContentAreaFilled(false);
@@ -137,7 +137,7 @@ public class Menu extends javax.swing.JFrame {
         dos.setBackground(new java.awt.Color(102, 153, 255, 100));
         dos.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         dos.setForeground(new java.awt.Color(255, 255, 255));
-        dos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_worker_26px.png"))); // NOI18N
+        dos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/worker.png"))); // NOI18N
         dos.setText("Nuevo Empleado");
         dos.setBorder(null);
         dos.setContentAreaFilled(false);
@@ -156,7 +156,7 @@ public class Menu extends javax.swing.JFrame {
         cuatro.setBackground(new java.awt.Color(102, 153, 255,100));
         cuatro.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         cuatro.setForeground(new java.awt.Color(255, 255, 255));
-        cuatro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_spiral_bound_booklet_24px_1.png"))); // NOI18N
+        cuatro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/blog.png"))); // NOI18N
         cuatro.setText("Tomar Pedido");
         cuatro.setBorder(null);
         cuatro.setContentAreaFilled(false);
@@ -174,7 +174,7 @@ public class Menu extends javax.swing.JFrame {
         cinco.setBackground(new java.awt.Color(102, 153, 255, 100));
         cinco.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         cinco.setForeground(new java.awt.Color(255, 255, 255));
-        cinco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_coins_32px.png"))); // NOI18N
+        cinco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/coins_mini.png"))); // NOI18N
         cinco.setText("Cuadrar Caja");
         cinco.setBorder(null);
         cinco.setContentAreaFilled(false);
@@ -192,7 +192,7 @@ public class Menu extends javax.swing.JFrame {
         seis.setBackground(new java.awt.Color(102, 153, 255,100));
         seis.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         seis.setForeground(new java.awt.Color(255, 255, 255));
-        seis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_client_management_30px.png"))); // NOI18N
+        seis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/user_mini.png"))); // NOI18N
         seis.setText("Agregar Cliente");
         seis.setBorder(null);
         seis.setContentAreaFilled(false);
@@ -213,7 +213,7 @@ public class Menu extends javax.swing.JFrame {
         panelMenu.setBounds(-300, 0, 290, 700);
 
         jLabel1.setBackground(new java.awt.Color(27, 37, 69));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/MENU FINAK.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/MENU FINAK.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 1000, 700);
 

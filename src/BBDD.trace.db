@@ -1,0 +1,19 @@
+2020-07-19 18:44:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Error de Sintaxis en sentencia SQL "CREATE TABLE IF NOT EXISTS ""CLIENTES_PERSONA"" (
+  ""CODIGO"" VARCHAR(3) NOT NULL,
+  ""DNI"" VARCHAR(8) NOT NULL,
+  ""NOMBRE"" VARCHAR(30) ,
+  PRIMARY KEY (""DNI"") U[*]
+) "; se esperaba "INDEX, ,, )"
+Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS ""CLIENTES_PERSONA"" (
+  ""CODIGO"" VARCHAR(3) NOT NULL,
+  ""DNI"" VARCHAR(8) NOT NULL,
+  ""NOMBRE"" VARCHAR(30) ,
+  PRIMARY KEY (""DNI"") U[*]
+) "; expected "INDEX, ,, )"; SQL statement:
+CREATE TABLE IF NOT EXISTS `clientes_persona` (
+  `codigo` varchar(3) NOT NULL,
+  `dni` varchar(8) NOT NULL,
+  `nombre` varchar(30) ,
+  PRIMARY KEY (`dni`) U
+) [42001-192]

@@ -92,7 +92,7 @@ public class Sede extends javax.swing.JPanel {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("TELEFONO :");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/Lovepik_com-400228250-vectorial-building.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/edificio.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -253,7 +253,7 @@ public class Sede extends javax.swing.JPanel {
         String telefono = inTelefono.getText();
         String cod = inCodigo.getText();
         if (!inCiudad.getText().isEmpty() && !inSede.getText().isEmpty() && !inDirec.getText().isEmpty() && !inTelefono.getText().isEmpty() && !inCodigo.getText().isEmpty()) {
-            Farmacia farmacia3 = new Farmacia(ciudad, sede, direc, telefono, cod);
+            Farmacia farmacia3 = new Farmacia(ciudad, sede, direc, telefono, cod,"asd");
             farmacias.add(farmacia3);
         }
         new CambiaPanel(pnlPrincipal,new Panels.Sede());

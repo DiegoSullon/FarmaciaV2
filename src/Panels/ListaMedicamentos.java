@@ -10,6 +10,7 @@ import Farmacia.Farmacia;
 import Farmacia.Empleado;
 import Gui.Menu;
 import java.awt.event.KeyEvent;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -46,6 +47,16 @@ public class ListaMedicamentos extends javax.swing.JPanel {
                 }
         ));
 
+    }
+
+    private void limpiartabla() {
+
+        int viewIndex = tabla.getSelectedRow();
+        if (viewIndex != -1) {
+            int modelIndex = tabla.convertRowIndexToModel(viewIndex); // converts the row index in the view to the appropriate index in the model
+            DefaultTableModel model = (DefaultTableModel) tabla.getModel();
+            model.removeRow(modelIndex);
+        }
     }
 
     /**
@@ -128,7 +139,7 @@ public class ListaMedicamentos extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tabla);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/mostrar_medicamento_logo.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/mostrar_medicamento_logo.png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Arial Narrow", 1, 48)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -151,23 +162,24 @@ public class ListaMedicamentos extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(inCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane2))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(90, 90, 90)
-                                        .addComponent(jLabel4))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(156, 156, 156)
-                                        .addComponent(jLabel2)))
-                                .addGap(38, 38, 38))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING))))
-                .addGap(0, 57, Short.MAX_VALUE))
+                                .addGap(90, 90, 90)
+                                .addComponent(jLabel4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(156, 156, 156)
+                                .addComponent(jLabel2)))
+                        .addGap(38, 38, 38)))
+                .addGap(0, 44, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(vencidosButton, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,16 +193,14 @@ public class ListaMedicamentos extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel3)))
-                .addGap(45, 45, 45)
+                    .addComponent(jLabel3))
+                .addGap(60, 60, 60)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(inCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -206,6 +216,8 @@ public class ListaMedicamentos extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void vencidosButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vencidosButtonMouseClicked
+
+        limpiartabla();
         farmacia.getInventario().medicamentosVencidos();
         int tam = farmacia.getInventario().getMedicamentosVencidos().size();
         String matriz[][] = new String[tam][5];

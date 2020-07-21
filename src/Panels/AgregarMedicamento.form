@@ -279,7 +279,7 @@
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/farmaciav1/pkg1/imagenes/5cae52a0a667499c7331f91fb5507892-frasco-de-pastillas-farmac--uticas-by-vexels.png"/>
+          <Image iconType="3" name="/Imagenes/frasco_pildoras.png"/>
         </Property>
       </Properties>
     </Component>

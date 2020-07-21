@@ -116,7 +116,7 @@ public class TomarPedido extends javax.swing.JPanel {
 
         botonFactura.setBackground(new java.awt.Color(27, 37, 69));
         botonFactura.setForeground(new java.awt.Color(27, 37, 69));
-        botonFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_bill_100px.png"))); // NOI18N
+        botonFactura.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/factura.png"))); // NOI18N
         botonFactura.setBorder(null);
         botonFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +126,7 @@ public class TomarPedido extends javax.swing.JPanel {
 
         botonClienteRegistrado.setBackground(new java.awt.Color(27, 37, 69));
         botonClienteRegistrado.setForeground(new java.awt.Color(27, 37, 69));
-        botonClienteRegistrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_list_100px.png"))); // NOI18N
+        botonClienteRegistrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/list.png"))); // NOI18N
         botonClienteRegistrado.setBorder(null);
         botonClienteRegistrado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +136,7 @@ public class TomarPedido extends javax.swing.JPanel {
 
         botonBoleta.setBackground(new java.awt.Color(27, 37, 69));
         botonBoleta.setForeground(new java.awt.Color(27, 37, 69));
-        botonBoleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_bus_ticket_100px.png"))); // NOI18N
+        botonBoleta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ticket.png"))); // NOI18N
         botonBoleta.setBorder(null);
         botonBoleta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +146,7 @@ public class TomarPedido extends javax.swing.JPanel {
 
         botonNuevoCliente.setBackground(new java.awt.Color(27, 37, 69));
         botonNuevoCliente.setForeground(new java.awt.Color(27, 37, 69));
-        botonNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/persona100.png"))); // NOI18N
+        botonNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/persona100.png"))); // NOI18N
         botonNuevoCliente.setBorder(null);
         botonNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -187,7 +187,7 @@ public class TomarPedido extends javax.swing.JPanel {
                         .addComponent(botonFactura)
                         .addGap(36, 36, 36)
                         .addComponent(botonBoleta, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 5, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -279,7 +279,7 @@ public class TomarPedido extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
+                .addContainerGap(19, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()

@@ -112,7 +112,7 @@ public class AgregarMedicamento extends javax.swing.JPanel {
 
         inFechaVencimiento.setModel(new javax.swing.SpinnerDateModel());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/5cae52a0a667499c7331f91fb5507892-frasco-de-pastillas-farmac--uticas-by-vexels.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/frasco_pildoras.png"))); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));

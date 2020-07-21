@@ -96,7 +96,7 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(settingsButton);
         settingsButton.setBounds(650, 20, 40, 32);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/Web 1280 – 1.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/login.png"))); // NOI18N
         getContentPane().add(jLabel2);
         jLabel2.setBounds(0, 0, 700, 440);
 
@@ -133,7 +133,8 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_dniLoginKeyTyped
 
     private void settingsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsButtonMouseClicked
-//        configuraciones
+        Settings set = new Settings(farmacia1);
+        set.setVisible(rootPaneCheckingEnabled);
     }//GEN-LAST:event_settingsButtonMouseClicked
 
     /**

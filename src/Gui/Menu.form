@@ -32,7 +32,7 @@
     <Component class="javax.swing.JButton" name="btnMenu">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/farmaciav1/pkg1/imagenes/icons8_menu_squared_50px.png"/>
+          <Image iconType="3" name="/Imagenes/boton_hamburguesa.png"/>
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -47,7 +47,7 @@
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="0" y="5" width="50" height="50"/>
+          <AbsoluteConstraints x="10" y="10" width="50" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -107,7 +107,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/farmaciav1/pkg1/imagenes/icons8_home_24px.png"/>
+                  <Image iconType="3" name="/Imagenes/home_medium.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nueva Sede"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -142,7 +142,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/farmaciav1/pkg1/imagenes/icons8_speaker_notes_24px.png"/>
+                  <Image iconType="3" name="/Imagenes/dialogo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Registrar Medicamento"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -178,7 +178,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/farmaciav1/pkg1/imagenes/icons8_worker_26px.png"/>
+                  <Image iconType="3" name="/Imagenes/worker.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nuevo Empleado"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -214,7 +214,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/farmaciav1/pkg1/imagenes/icons8_spiral_bound_booklet_24px_1.png"/>
+                  <Image iconType="3" name="/Imagenes/blog.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tomar Pedido"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -249,7 +249,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/farmaciav1/pkg1/imagenes/icons8_coins_32px.png"/>
+                  <Image iconType="3" name="/Imagenes/coins_mini.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Cuadrar Caja"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -284,7 +284,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/farmaciav1/pkg1/imagenes/icons8_client_management_30px.png"/>
+                  <Image iconType="3" name="/Imagenes/user_mini.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Agregar Cliente"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -317,7 +317,7 @@
           <Color blue="45" green="25" red="1b" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/farmaciav1/pkg1/imagenes/MENU FINAK.png"/>
+          <Image iconType="3" name="/Imagenes/MENU FINAK.png"/>
         </Property>
       </Properties>
       <Constraints>

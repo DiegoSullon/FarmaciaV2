@@ -65,7 +65,7 @@ public class AgregarClienteTP extends javax.swing.JFrame {
 
         botonP.setBackground(new java.awt.Color(27, 37, 69));
         botonP.setForeground(new java.awt.Color(27, 37, 69));
-        botonP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/persona100.png"))); // NOI18N
+        botonP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/persona100.png"))); // NOI18N
         botonP.setBorder(null);
         botonP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +75,7 @@ public class AgregarClienteTP extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(27, 37, 69));
         jButton2.setForeground(new java.awt.Color(27, 37, 69));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/empresa100.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/empresa2.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

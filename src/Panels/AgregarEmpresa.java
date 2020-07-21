@@ -66,7 +66,7 @@ public class AgregarEmpresa extends javax.swing.JPanel {
         txtnombreE.setBorder(null);
         txtnombreE.setOpaque(false);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/EMPRESA PNG.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/EMPRESA PNG.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Arial Narrow", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));

@@ -27,6 +27,8 @@ public class RegistrarEmpleado extends javax.swing.JPanel {
         this.empleado = empleado;
         this.farmacia = farmacia;
         initComponents();
+        buttonGroup1.add(femenino);
+        buttonGroup1.add(masculino);
     }
 
     public RegistrarEmpleado() {

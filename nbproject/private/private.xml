@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/ClientesRegistradosTP.java</file>
-            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/AgregarClienteTP.java</file>
-            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/TomarPedido.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/ListaEmpleados.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Farmacia/Farmacia.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/AdvertenciaPedido.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/Sede.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Gui/Settings.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Gui/Login.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Farmacia/Inventario.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Panels/ListaMedicamentos.java</file>
+            <file>file:/D:/XXX/JAVA/POO/FarmaciaV2/src/Farmacia/RegistroVentas.java</file>
         </group>
     </open-files>
 </project-private>

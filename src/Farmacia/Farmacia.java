@@ -32,7 +32,17 @@ public class Farmacia {
         this.telefono = telefono;
         this.codigo = codigo;
         actualizarConexion("bwfvy0vhvjg6ubvv52vs-mysql.services.clever-cloud.com", "bwfvy0vhvjg6ubvv52vs", "3306", "utosyldwfdhnnlqu", "UyLT9X6DQx1p16jahDke");
-        actualizarConexion_local("localhost", "farmacia", "3308", "root", "");
+//        actualizarConexion_local("localhost", "farmacia", "3308", "root", "");
+        this.rVentas = new RegistroVentas();
+        this.inventario = new Inventario();
+        this.r_empleados = new RegistroEmpleados(this);
+    }
+    public Farmacia(String ciudad, String sede, String direccion, String telefono, String codigo,String dif) {
+        this.ciudad = ciudad;
+        this.sede = sede;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.codigo = codigo;
         this.rVentas = new RegistroVentas();
         this.inventario = new Inventario();
         this.r_empleados = new RegistroEmpleados(this);
@@ -42,20 +52,20 @@ public class Farmacia {
         return r_empleados.obtenerEmpleado(dni);
     }
 
-    public void actualizarConexion(String host, String name, String port, String user, String passsword) {
+    public void actualizarConexion(String host, String name, String port, String user, String password) {
         database.put("host", host);
         database.put("name", name);
         database.put("port", port);
         database.put("user", user);
-        database.put("password", passsword);
+        database.put("password", password);
         this.conexion = conectarBBDD();
     }
-    public void actualizarConexion_local(String host, String name, String port, String user, String passsword) {
+    public void actualizarConexion_local(String host, String name, String port, String user, String password) {
         database_local.put("host", host);
         database_local.put("name", name);
         database_local.put("port", port);
         database_local.put("user", user);
-        database_local.put("password", passsword);
+        database_local.put("password", password);
         this.conexion_local = conectarBBDD_local();
     }
 

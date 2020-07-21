@@ -65,7 +65,7 @@ public class MenuMedicamento extends javax.swing.JPanel {
 
         jButton2.setBackground(new java.awt.Color(27, 37, 69));
         jButton2.setForeground(new java.awt.Color(27, 37, 69));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/farmaciav1/pkg1/imagenes/icons8_treatment_list_100px_1.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lista_medica.png"))); // NOI18N
         jButton2.setBorder(null);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

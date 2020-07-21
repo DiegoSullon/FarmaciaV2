@@ -28,7 +28,7 @@ public class Pedido {
         private float descuento = 0.3f;
         private ArrayList<Medicamento> medicamentos_promocion = new ArrayList<Medicamento>();
         public void aplicarDescuento() {
-
+            
         }
     }
 

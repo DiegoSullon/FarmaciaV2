@@ -117,7 +117,7 @@
               <Color blue="45" green="25" red="1b" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/farmaciav1/pkg1/imagenes/icons8_treatment_list_100px_1.png"/>
+              <Image iconType="3" name="/Imagenes/list.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
